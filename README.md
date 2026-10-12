@@ -23,6 +23,6 @@ I test verificano scadenza, sospensione della scheda, pausa/ripresa, reset, ripr
 
 ## GitHub Pages
 
-In **Settings → Pages → Build and deployment**, seleziona **GitHub Actions**. Il workflow `.github/workflows/pages.yml` esegue test e build e pubblica `dist/` a ogni push su `main`; può anche essere avviato da **Actions → Publish GitHub Pages → Run workflow**.
+La configurazione attiva è **Settings → Pages → Build and deployment → Deploy from a branch → main → / (root)**. GitHub Pages pubblica il sito a ogni push su `main`. HTML, CSS e moduli JavaScript funzionano direttamente nel browser e usano percorsi relativi, compatibili con il sottopercorso `/timer-g/`. Il file `.nojekyll` mantiene la pubblicazione statica.
 
-Gli asset usano percorsi relativi, compatibili con il sottopercorso `/timer-g/`. Non servono token o segreti applicativi. Se GitHub Pages o Actions non sono abilitati nel repository, occorre abilitarli prima del deploy.
+Il workflow `.github/workflows/ci.yml` esegue separatamente test e build Vite a ogni push e pull request su `main`. Non è richiesto un secondo workflow di deploy: la pubblicazione è gestita dal workflow automatico di Pages. Non servono token o segreti applicativi.

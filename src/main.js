@@ -1,4 +1,3 @@
-import './style.css';
 import { Timer, formatTime, parseDuration } from './timer.js';
 
 const $ = (selector) => document.querySelector(selector);
